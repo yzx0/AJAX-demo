@@ -23,14 +23,7 @@ testBtn.onclick = function () {
             header: { 'yang': 18, 'Content-Type': 'application/x-www-form-urlencoded' }
         })
 }
-window.jQuery.ajax = function (obj) {
-    let url = obj.url
-    let method = obj.method
-    let body = obj.body
-    let successFn = obj.successFn
-    let failFn = obj.failFn
-    let header = obj.header
-    console.log(obj)
+window.jQuery.ajax = function ({url,method,body,successFn,failFn,header}) {  
     let request = new XMLHttpRequest()
     request.open(method, url)
     for (let key in header) {
